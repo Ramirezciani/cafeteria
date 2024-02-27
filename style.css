@@ -87,8 +87,8 @@ body {
 
 .gallery-item img {
     max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    height: 150px;
+    border-radius: 100px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
