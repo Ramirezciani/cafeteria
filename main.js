@@ -1,14 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
     const detailsButtons = document.querySelectorAll('.details-btn');
     const productDetails = document.querySelector('.product-details');
     const closeBtn = document.querySelector('.close-btn');
@@ -31,11 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
 
             productDetails.style.display = 'flex';
+
+            // Escuchar eventos del botón "Cerrar" dentro de los detalles del producto
+            const closeDetailsBtn = document.querySelector('.product-details .close-btn');
+            closeDetailsBtn.addEventListener('click', function() {
+                productDetails.style.display = 'none';
+            });
         });
     });
 
-    // Cerrar la sección de detalles del producto al hacer clic en el botón "Cerrar"
-    closeBtn.addEventListener('click', function() {
-        productDetails.style.display = 'none';
-    });
 });
