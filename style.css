@@ -5,17 +5,33 @@ body{
 
 /* Estilos de navegación */
 
-.navbar {
-  background-color: #76B5A0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 20px 0; /* Aumentar el padding vertical */
+header {
+  background-color: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333; /* Cambiado a color negro */
 }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  color: #333; /* Cambiado a color negro */
+}
+
+.logo-container img {
+  width: 50px; /* Ajusta el ancho según tus necesidades */
+  margin-right: 10px; /* Ajusta el margen derecho según tus necesidades */
+}
+
 .nav-links {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-end; /* Alinear elementos a la derecha */
+  justify-content: flex-end;
+  color: #333; /* Cambiado a color negro */
 }
 
 .nav-links li {
@@ -28,7 +44,7 @@ body{
 
 .nav-links li a {
   text-decoration: none;
-  color: #333;
+  color: #333; /* Cambiado a color negro */
   transition: color 0.3s ease;
 }
 
