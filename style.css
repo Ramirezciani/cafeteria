@@ -128,29 +128,39 @@ nav ul li a:hover {
 .cartas {
   display: flex;
   justify-content: center;
-  gap: 0px;
+  gap: 20px; /* Ajusta el espacio entre las cartas según sea necesario */
+  flex-wrap: wrap; /* Permitir que las cartas se envuelvan en dispositivos pequeños */
   margin-top: 20px;
-  
 }
 
 .carta {
-  width: 500px;
-  height:200px;
+  width: 200px; /* Ancho fijo para cada carta */
+  height: 200px; /* Altura fija para mantener la carta cuadrada */
   background-color: #f9f9f9;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin: 20px;
+  margin-bottom: 20px; /* Espacio entre cada fila de cartas */
+  overflow: hidden; /* Evitar que las imágenes se desborden */
 }
 
 .carta img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
+  width: auto; 
+  height: 100%; 
+  object-fit: cover; 
+  border-radius: 10px; 
 }
+
+
+.carta img {
+  width: 100%; /* Asegurar que la imagen llene todo el espacio */
+  height: 100%; /* Asegurar que la imagen llene todo el espacio */
+  object-fit: cover; /* Escalar la imagen para que cubra todo el espacio disponible */
+  border-radius: 10px; /* Mantener el borde redondeado */
+}
+
 
 .popup {
   display: none;
@@ -247,3 +257,4 @@ p {
 .whatsapp-button i {
   margin-right: 10px;
 }
+
