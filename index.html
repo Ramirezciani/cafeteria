@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
   <title>Wolf.21</title>
 </head>
 <body>
@@ -14,41 +16,88 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#">Quienes Somos</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Experiencias</a></li>
+        <li><a href="#quienes-somos">Quiénes Somos</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#experiencias">Experiencias</a></li>
       </ul>
     </nav>
   </header>
   <!-- QUIENES SOMOS -->
-  <section class="quienes-somos">
+  <section id="quienes-somos" class="quienes-somos">
     <h2 class="titulo">Quienes Somos</h2>
-    <p class="parrafo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec tellus vel ipsum ultrices venenatis. Donec tincidunt elit vel diam auctor hendrerit.</p>
-    <div class="imagenes">
-        <img src="img/WhatsApp Image 2024-02-27 at 12.21.39_97d2d087.jpg" alt="Imagen 1">
-        <img src="img/WhatsApp Image 2024-02-27 at 12.21.55_24baab53.jpg" alt="Imagen 2">
-        <img src="img/WhatsApp Image 2024-02-27 at 12.22.10_3c03dca0.jpg" alt="Imagen 3">
+    <p class="parrafo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, error odit similique fugit nisi possimus quisquam distinctio id necessitatibus reiciendis omnis a est iste dolorem quos nostrum quo, magnam cupiditate?</p>
+    <div class="whatsapp-container">
+      <a href="https://wa.me/+56987325889" class="whatsapp-button" target="_blank">
+          <i class="fab fa-whatsapp"></i> Contáctame por WhatsApp
+      </a>
     </div>
 </section>
 <!-- SERVICIOS -->
-<section class="servicios">
+<!-- Boton Wsp -->
+
+
+<section id="servicios" class="servicios">
   <div class="servicio">
-      <i class="fas fa-desktop"></i>
       <h3>Eventos Corporativos</h3>
       <p>Ofrecemos servicios de catering diseñados para eventos corporativos, desde reuniones hasta cenas de gala. Nuestros menús personalizados se adaptan a las necesidades empresariales, asegurando una experiencia culinaria de alta calidad que refleje la imagen de la empresa.</p>
   </div>
   <div class="servicio">
-      <i class="fas fa-mobile-alt"></i>
       <h3>Cócteles y Recepciones</h3>
       <p>Para eventos sociales elegantes, proporcionamos una variedad de canapés y estaciones de bebidas para deleitar a los invitados. Nuestra atención meticulosa a la presentación garantiza una experiencia memorable en cada cóctel y recepción.</p>
   </div>
   <div class="servicio">
-      <i class="fas fa-chart-line"></i>
       <h3>Eventos Especiales</h3>
       <p>Para lanzamientos de productos y conferencias, proporcionamos creatividad culinaria y presentación impecable. Desde menús innovadores hasta decoración temática, nos aseguramos de que cada detalle de su evento especial sea perfectamente ejecutado</p>
   </div>
+  <div class="servicio">
+    <h3>Cócteles y Recepciones</h3>
+    <p>Para eventos sociales elegantes, proporcionamos una variedad de canapés y estaciones de bebidas para deleitar a los invitados. Nuestra atención meticulosa a la presentación garantiza una experiencia memorable en cada cóctel y recepción.</p>
+</div>
+</section>
+<!-- Productos -->
+<section id="productos" class="productos">
+  <h2 class="titulo">Nuestros Productos</h2>
+  <div class="cartas">
+      <div class="carta" onclick="mostrarPopup('Tablas Saladas', 'Explora nuestras tablas saladas, una deliciosa combinación de quesos gourmet, embutidos selectos y acompañamientos irresistibles. Perfectas para compartir y disfrutar en cualquier ocasión, nuestras tablas saladas son el complemento ideal para tus reuniones y eventos especiales')">
+          <img src="img/tabla.jpg" alt="Tablas">
+      </div>
+      <div class="carta" onclick="mostrarPopup('Canapés', 'Descubre nuestros deliciosos canapés, una fusión perfecta de sabores exquisitos en bocados pequeños. Elaborados con ingredientes frescos y selectos, nuestros canapés son el acompañamiento ideal para tus eventos y celebraciones. Disfruta de una experiencia gastronómica refinada con cada bocado')">
+          <img src="img/canapes.jpg" alt="Producto 2">
+      </div>
+      <div class="carta" onclick="mostrarPopup('Cócteles', 'Descubre nuestra variedad de cócteles, una selección exquisita de sabores para elevar cualquier ocasión. Desde clásicos refrescantes hasta creaciones innovadoras, cada cóctel es una experiencia única que te invita a disfrutar y compartir momentos memorables')">
+          <img src="img/cocteles.jpeg" alt="Producto 3">
+      </div>
+      <div class="carta" onclick="mostrarPopup('Tablas Dulces', 'Disfruta de nuestras deliciosas tablas dulces, una tentadora selección de golosinas artesanales y chocolates exquisitos. Perfectas para endulzar cualquier ocasión, nuestras tablas son el complemento ideal para crear momentos dulces e inolvidables.')">
+          <img src="img/tabla_dulce.jpg" alt="Producto 4">
+      </div>
+      <div class="carta" onclick="mostrarPopup('Cajas de Cumpleaños', '¡Celebra con estilo! Nuestras cajas de cumpleaños ofrecen una experiencia única y especial, llenas de sorpresas, dulces y mensajes personalizados. El regalo perfecto para hacer que ese día sea inolvidable')">
+          <img src="img/caja.jpg" alt="Producto 5">
+      </div>
+  </div>
 </section>
 
+<!-- Popup para mostrar la descripción del producto -->
+<div id="popup" class="popup">
+  <div class="contenido-popup">
+      <span class="cerrar" onclick="cerrarPopup()">&times;</span>
+      <h2 id="popup-titulo"></h2>
+      <p id="popup-descripcion"></p>
+  </div>
+</div>
+
+
+<footer>
+  <div class="redes-sociales">
+      <a href="https://www.instagram.com/wolf21_coffee_break/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/+56987325889" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p>Diseñado por PR</p>
+</footer>
+
+
+
+
+<script src="main.js"></script>
 </body>
 </html>

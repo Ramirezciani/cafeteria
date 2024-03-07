@@ -4,6 +4,7 @@
 body {
   font-family: "Cabin", sans-serif;
   margin: 0;
+  background-image: linear-gradient(to bottom, #89b399, #ffffff); /* Degradado vertical */  
 }
 
 header {
@@ -51,38 +52,35 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* QUINES SOMOS */
+/* QUIENES SOMOS */
 
 .quienes-somos {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr; 
+  grid-template-columns: 1fr; 
   align-items: center;
-  gap: 100px; 
-  height: 300px; 
-  background-image: linear-gradient(to bottom, #e8d3a9, #ffffff); /* Degradado vertical */  
+  gap: 20px; 
+  height: auto; 
+  text-align: center;
+  margin: 20px;
 }
 
 .titulo {
-  grid-column: 1 / 2; /* El título ocupa la primera columna */
-  margin: 20px;
   font-family: 'Dancing Script';
   font-size: 50px;
 }
 
 .parrafo {
-  grid-column: 2 / 3; /* El párrafo ocupa la segunda columna */
   text-align: justify;
 }
 
 .imagenes {
-  grid-column: 3 / 4; /* Las imágenes ocupan la tercera columna */
   display: flex; /* Mostrar las imágenes en línea */
-
+  justify-content: center;
+  gap: 20px;
 }
 
 .imagenes img {
   max-width: 100px; /* Ajustar el tamaño máximo de las imágenes */
-  margin-right: 10px;
   border-radius: 50%;
 }
 
@@ -108,9 +106,144 @@ nav ul li a:hover {
 
 .servicio h3 {
   font-family: 'Dancing Script';
-  margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+  margin-bottom: 10px;
+  font-size: 30px; /* Espacio entre el título y el párrafo */
 }
 
 .servicio p {
   margin: 0; /* Eliminar el margen inferior del párrafo */
+}
+
+/* PRODUCTOS */
+.productos {
+  text-align: center;
+  margin: 100px;
+  
+}
+
+.titulo {
+  padding: 20px;
+}
+
+.cartas {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  margin-top: 20px;
+  
+}
+
+.carta {
+  width: 500px;
+  height:200px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.carta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.contenido-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#popup-titulo{
+  font-family: 'Dancing Script';
+  font-size: 40px;
+  text-align: center;
+}
+
+#popup-descripcion{
+  text-align: justify;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  z-index: 999; /* Asegura que el footer esté por encima del contenido */
+}
+
+.redes-sociales a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.redes-sociales a:hover {
+  color: #ccc;
+}
+
+.redes-sociales i {
+  font-size: 24px;
+}
+
+p {
+  margin: 10px 0 0;
+}
+
+
+
+/* WHATSAAP BOTON */
+.whatsapp-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.whatsapp-button {
+  background-color: #25d366;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.whatsapp-button:hover {
+  background-color: #128c7e;
+}
+
+.whatsapp-button i {
+  margin-right: 10px;
 }
