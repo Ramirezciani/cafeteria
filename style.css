@@ -16,26 +16,27 @@ header {
 }
 
 .logo {
-  display: flex; /* Utilizamos flexbox para colocar los elementos en línea */
-  align-items: center; /* Alineamos los elementos verticalmente */
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
   max-width: 50px;
   border-radius: 50%;
-  margin-right: 10px; /* Espacio entre el logo y el título */
+  margin-right: 10px;
 }
 
 .title {
   color: #fff;
   font-family: "Dancing Script", cursive;
-  margin: 0; 
+  margin: 0;
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 nav ul li {
@@ -51,6 +52,79 @@ nav ul li a {
 nav ul li a:hover {
   text-decoration: underline;
 }
+
+.hamburguesa {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px auto;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    flex: 1;
+  }
+
+  .logo h1 {
+    display: none;
+  }
+
+  .hamburguesa {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    margin-left: 0;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  nav ul li a {
+    margin-left: 0;
+  }
+
+  .hamburguesa:focus + nav ul {
+    display: flex;
+  }
+
+  .hamburguesa:focus .bar:nth-child(1) {
+    transform: translateY(8px) rotate(-45deg);
+  }
+
+  .hamburguesa:focus .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburguesa:focus .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(45deg);
+  }
+
+  header {
+    position: relative;
+  }
+}
+
+
 
 /* QUIENES SOMOS */
 

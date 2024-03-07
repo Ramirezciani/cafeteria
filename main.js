@@ -20,4 +20,34 @@ window.addEventListener("scroll", function() {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburguesa = document.querySelector('.hamburguesa');
+  const menuNav = document.querySelector('nav ul');
+
+  hamburguesa.addEventListener('click', function() {
+    const ariaExpanded = this.getAttribute('aria-expanded') === 'true' || false;
+    this.setAttribute('aria-expanded', !ariaExpanded);
+    menuNav.classList.toggle('activo');
+  });
+
+  // Cerrar el menú al hacer clic en cualquier enlace del menú
+  const enlacesMenu = document.querySelectorAll('nav ul li a');
+  enlacesMenu.forEach(enlace => {
+    enlace.addEventListener('click', function() {
+      hamburguesa.setAttribute('aria-expanded', 'false');
+      menuNav.classList.remove('activo');
+    });
+  });
+
+  // Cerrar el menú al hacer clic en cualquier lugar fuera del menú
+  document.addEventListener('click', function(event) {
+    const targetElement = event.target;
+    const isClickInside = menuNav.contains(targetElement) || hamburguesa.contains(targetElement);
+    if (!isClickInside) {
+      hamburguesa.setAttribute('aria-expanded', 'false');
+      menuNav.classList.remove('activo');
+    }
+  });
+});
+
 
