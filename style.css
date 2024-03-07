@@ -1,179 +1,116 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-body{
-  font-family: "DM Sans", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Dancing+Script:wght@400..700&display=swap');
+
+body {
+  font-family: "Cabin", sans-serif;
+  margin: 0;
 }
 
-/* Estilos de navegación */
-
 header {
-  background-color: #f9f9f9;
+  background-color: #333;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #333; /* Cambiado a color negro */
 }
 
-.logo-container {
-  display: flex;
-  align-items: center;
-  color: #333; /* Cambiado a color negro */
+.logo {
+  display: flex; /* Utilizamos flexbox para colocar los elementos en línea */
+  align-items: center; /* Alineamos los elementos verticalmente */
 }
 
-.logo-container img {
-  width: 50px; /* Ajusta el ancho según tus necesidades */
-  margin-right: 10px; /* Ajusta el margen derecho según tus necesidades */
+.logo img {
+  max-width: 50px;
+  border-radius: 50%;
+  margin-right: 10px; /* Espacio entre el logo y el título */
 }
 
-.nav-links {
+.title {
+  color: #fff;
+  font-family: "Dancing Script", cursive;
+  margin: 0; 
+}
+
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: flex-end;
-  color: #333; /* Cambiado a color negro */
 }
 
-.nav-links li {
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
   margin-left: 20px;
 }
 
-.nav-links li:first-child {
-  margin-left: 0;
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  color: #333; /* Cambiado a color negro */
-  transition: color 0.3s ease;
-}
+/* QUINES SOMOS */
 
-.nav-links li a:hover {
-  color: #fff;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-/* Sección "Quiénes Somos" */
 .quienes-somos {
-  background-color: #f8f9fa;
-  padding: 50px 20px; /* Espaciado interno en los lados */
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; 
+  align-items: center;
+  gap: 100px; 
+  height: 300px; 
+  background-image: linear-gradient(to bottom, #e8d3a9, #ffffff); /* Degradado vertical */  
 }
 
-.quienes-somos h2 {
-  font-size: 28px; /* Reducir el tamaño del título */
-  margin-bottom: 20px;
+.titulo {
+  grid-column: 1 / 2; /* El título ocupa la primera columna */
+  margin: 20px;
+  font-family: 'Dancing Script';
+  font-size: 50px;
 }
 
-.quienes-somos p {
-  font-size: 16px; /* Reducir el tamaño del texto */
-  color: #555;
+.parrafo {
+  grid-column: 2 / 3; /* El párrafo ocupa la segunda columna */
   text-align: justify;
-  margin: 20px 0; /* Ajustar el margen superior e inferior */
 }
 
+.imagenes {
+  grid-column: 3 / 4; /* Las imágenes ocupan la tercera columna */
+  display: flex; /* Mostrar las imágenes en línea */
 
-/* Sección de productos */
-.products {
-  background-color: #f9f9f9;
-  padding: 50px 20px; /* Espaciado interno en los lados */
 }
 
-.product-list {
-  display: flex;
-  flex-wrap: wrap; /* Permitir que los productos se envuelvan en múltiples líneas */
-  justify-content: space-between;
+.imagenes img {
+  max-width: 100px; /* Ajustar el tamaño máximo de las imágenes */
+  margin-right: 10px;
+  border-radius: 50%;
 }
 
-.product {
-  width: calc(50% - 20px); /* Dos columnas en pantalla completa */
-  margin-bottom: 30px;
+/* SERVICIOS */
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas responsivas */
+  gap: 20px; /* Espacio entre los servicios */
+  margin: 20px; /* Espacio alrededor del contenido */
+}
+
+.servicio {
+  text-align: center;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  border: 1px solid #ccc; /* Borde alrededor de cada servicio */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
-.product:hover {
-  transform: translateY(-5px);
+.servicio i {
+  font-size: 36px; /* Tamaño del icono */
+  margin-bottom: 10px; /* Espacio entre el icono y el título */
 }
 
-.product h3 {
-  font-size: 20px; /* Reducir el tamaño del título */
+.servicio h3 {
+  font-family: 'Dancing Script';
+  margin-bottom: 10px; /* Espacio entre el título y el párrafo */
 }
 
-.product p {
-  font-size: 14px; /* Reducir el tamaño del texto */
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.details-btn {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 8px 16px; /* Reducir el tamaño del botón */
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.details-btn:hover {
-  background-color: #555;
-}
-
-/* Estilos para dispositivos móviles */
-@media screen and (max-width: 768px) {
-  .container {
-      padding: 0 10px; /* Reducir el espaciado interno en los lados */
-  }
-
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px; /* Ajustar la posición del menú desplegable */
-      right: 10px; /* Ajustar la posición del menú desplegable */
-      width: 300px;
-      background-color: #76B5A0;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra */
-  }
-
-  .nav-links.show {
-      display: flex;
-  }
-
-  .nav-links li {
-      margin: 10px 0;
-  }
-
-  .menu-toggle {
-      display: block;
-      background-color: transparent;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 100; /* Asegurar que esté sobre el menú */
-  }
-
-  .quienes-somos h2 {
-      font-size: 24px; /* Reducir el tamaño del título */
-  }
-
-  .quienes-somos p {
-      font-size: 14px; /* Reducir el tamaño del texto */
-  }
-
-  .product {
-      width: 100%; /* Una columna en dispositivos móviles */
-  }
+.servicio p {
+  margin: 0; /* Eliminar el margen inferior del párrafo */
 }
